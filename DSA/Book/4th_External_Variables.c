@@ -1,12 +1,11 @@
 //Demonstation of External Variables
 #include<stdio.h>
-#include<math.h>
 void extfun();//Function Decleration
-int num;//External Variable Decleration
+int num=10;//External Variable Decleration
 int main()
 {
-    extern int num=10;//External Varibale Decleration
-    printf("%d\n",num);
+    extfun();//Function call
+    printf("\n");
     return 0;
 }
 void extfun()
