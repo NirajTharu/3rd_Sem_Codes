@@ -6,15 +6,16 @@ float derivative(float[],float ,int);
 int main()
 {
     // Decleratino of array to store the coefficients of the array.
-    float poly[max],x,a,b,deriv;
-    int deg; //Degree of the polynomial;
+    float poly[max],x,deriv;
+    int a,b;
+    int deg,i; //Degree of the polynomial;
     printf("Enter the degree of the polynomial:\n");
     scanf("%d",&deg);
     printf("Enter the coefficients of the polynomial:\n");
     for(int i=0;i<=deg;i++)
     {
         scanf("%f",&poly[i]);
-    }
+    }   
     deriv=derivative(poly,2.5,deg);
     printf("The derivative of the function is:%f\n",deriv);
     //initial guess
@@ -32,7 +33,7 @@ int main()
     {
         float d;
         float h=0.01;
-        d=(eval(poly,x-h,deg) - eval(poly,x-h,deg))/(2*h);
+        d=(eval(poly,x+h,deg) - eval(poly,x-h,deg))/(2*h);
         return d;
     }
     float eval(float poly[],float x,int deg)

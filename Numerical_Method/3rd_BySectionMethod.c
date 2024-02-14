@@ -5,7 +5,7 @@ float eval(float[],float ,int);
 int main()
 {
     //Decleration of the array to store the coefficients
-    float poly[max],x,a,b ;
+    float poly[max],x,a,b;
     int i,deg;//degree of polynomial;
     printf("Enter the degree of the polynomial:");
     scanf("%d",&deg);
