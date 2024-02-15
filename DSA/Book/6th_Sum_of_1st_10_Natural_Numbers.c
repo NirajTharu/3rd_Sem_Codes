@@ -4,9 +4,9 @@ int sum(int a);
 int main()
 {
     int x;
-    printf("Enter any positve intiger number:");
+    printf("Enter any positive integer number:");
     scanf("%d",&x);
-    printf("The sum of first %d intigers = %d\n",x,sum(x));
+    printf("The sum of first %d integers = %d\n",x,sum(x));
     return 0;
 }
 int sum(int x)
