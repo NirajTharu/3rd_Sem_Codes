@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    int n[25],n1[25]; //Declearing variables to access the array.
+    int n[25],n1[25]; //Declaring variables to access the array.
     int a[55];// For initializing the array elements number.
     // cout<<"Enter the total elements of both array:"<<endl;
     // for(int i=0;i<a;i++)

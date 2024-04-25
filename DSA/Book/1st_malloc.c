@@ -1,4 +1,4 @@
-//To demonstate the use of dynamic memory allocation function using malloc().This programs find the sum of all elements of the array.
+//To demonstrate the use of dynamic memory allocation function using malloc().This programs find the sum of all elements of the array.
 #include<stdio.h>
 #include<stdlib.h>
 // #define NULL 0
@@ -12,7 +12,7 @@ int main()
     ptr=(int *) malloc(n*sizeof(int));//Dynamic memory allocation
     if(ptr==NULL)//Checking if the request is granted or not
     {
-        printf("The requested amount of the memory is not avilable\n");
+        printf("The requested amount of the memory is not available\n");
         return 0;
     }
     else

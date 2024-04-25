@@ -1,13 +1,13 @@
 #include <stdio.h>
-int search(int arry[], int n);
-int sort(int arry[], int n);
-int traverse(int arry[], int n);
-int inrt(int arry[], int n, int capacity);
-int del(int arry[], int n);
-int display(int arry[], int n);
+int search(int array[], int n);
+int sort(int array[], int n);
+int traverse(int array[], int n);
+int insert(int array[], int n, int capacity);
+int delete(int array[], int n);
+int display(int array[], int n);
 int main()
 {
-    int arry[100], i;
+    int array[100], i;
     int n, capacity = 100;
     int choice, find;
     printf("Enter the size of array: ");
@@ -15,7 +15,7 @@ int main()
     printf("Enter the elements of array: \n");
     for (i = 0; i < n; i++)
     {
-        scanf("%d", &arry[i]);
+        scanf("%d", &array[i]);
     }
 
     printf("What operation do you want to perform ?\n1.Sort\n2.Search\n3.Insert element\n4.Delete element\n5.Traversing\n");
@@ -24,41 +24,41 @@ int main()
     switch (choice)
     {
     case 1:
-        sort(arry, n);
+        sort(array, n);
         break;
 
     case 2:
-        search(arry, n);
+        search(array, n);
         break;
 
     case 3:
-        inrt(arry, n, capacity);
+        insert(array, n, capacity);
         break;
 
     case 4:
-        del(arry, n);
+        delete(array, n);
         break;
 
     case 5:
-        traverse(arry, n);
+        traverse(array, n);
         break;
 
     default:
-        printf("Please choose from the list \n");
+        printf("Invalid Choice!! \n");
         break;
     }
 
     return 0;
 }
 
-int search(int arry[], int n)
+int search(int array[], int n)
 {
     int find, i;
-    printf("Enter the elemetn to find: ");
+    printf("Enter the element to find: ");
     scanf("%d", &find);
     for (i = 0; i < n; i++)
     {
-        if (find == arry[i])
+        if (find == array[i])
         {
             printf("Your element is found!");
             return 0;
@@ -68,7 +68,7 @@ int search(int arry[], int n)
     return 0;
 }
 
-int sort(int arry[], int n)
+int sort(int array[], int n)
 {
     int temp;
     int value;
@@ -81,17 +81,17 @@ int sort(int arry[], int n)
         {
             for (int j = i + 1; j < n; j++)
             {
-                if (arry[i] > arry[j])
+                if (array[i] > array[j])
                 {
-                    temp = arry[j];
-                    arry[j] = arry[i];
-                    arry[i] = temp;
+                    temp = array[j];
+                    array[j] = array[i];
+                    array[i] = temp;
                 }
             }
         }
         printf("The sorted elements are : \n");
 
-        display(arry, n);
+        display(array, n);
         return 0;
     }
 
@@ -101,28 +101,28 @@ int sort(int arry[], int n)
         {
             for (int j = i + 1; j < n; j++)
             {
-                if (arry[i] < arry[j])
+                if (array[i] < array[j])
                 {
-                    temp = arry[j];
-                    arry[j] = arry[i];
-                    arry[i] = temp;
+                    temp = array[j];
+                    array[j] = array[i];
+                    array[i] = temp;
                 }
             }
         }
         printf("The sorted elements are : \n");
 
-        display(arry, n);
+        display(array, n);
         return 0;
     }
 }
 
-int traverse(int arry[], int n)
+int traverse(int array[], int n)
 {
-    display(arry, n);
+    display(array, n);
     return 0;
 }
 
-int inrt(int arry[], int n, int capacity)
+int insert(int array[], int n, int capacity)
 {
     int element, position;
     printf("Enter the index in which you want to add the element\n");
@@ -137,18 +137,18 @@ int inrt(int arry[], int n, int capacity)
 
     for (int i = n - 1; i >= position; i--)
     {
-        arry[i + 1] = arry[i];
+        array[i + 1] = array[i];
     }
 
-    arry[position] = element;
+    array[position] = element;
     n += 1;
 
-    printf("The arrray after insertion is :\n");
-    display(arry, n);
+    printf("The array after insertion is :\n");
+    display(array, n);
     return 0;
 }
 
-int del(int arry[], int n)
+int delete(int array[], int n)
 {
     int index;
     printf("Enter the position in which you want to delete the element\n");
@@ -161,23 +161,24 @@ int del(int arry[], int n)
 
     for (int i = index; i <= n - 1; i++)
     {
-        arry[i] = arry[i + 1];
+        array[i] = array[i + 1];
     }
 
     n -= 1;
 
-    printf("The arrray after insertion is :\n");
-    display(arry, n);
+    printf("The array after insertion is :\n");
+    display(array, n);
+    printf("\n");
     return 0;
 }
 
-int display(int arry[], int n)
+int display(int array[], int n)
 {
     printf("The array elements are : \n");
 
     for (int i = 0; i < n; i++)
     {
-        printf("%d\t", arry[i]);
+        printf("%d\n", array[i]);
     }
     return 0;
 }

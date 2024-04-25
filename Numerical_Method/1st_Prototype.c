@@ -12,7 +12,7 @@ int main()
         scanf("%f",&poly[i]);
     }
     //initial guess
-    x=1;
+    int x=1;
     //Start iteration
     while(eval(poly,x)!=0.001)
     {

@@ -1,0 +1,28 @@
+//All the series up to desire number of terms.
+#include <stdio.h>
+#include<stdlib.h>
+
+int main() {
+    int i, n;
+    int t1 = 0, t2 = 1; // Initialize first and second terms
+    int nextTerm = t1 + t2; // Initialize the next term (3rd term)
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    // Print the first two terms t1 and t2
+    printf("Fibonacci Series: %d, %d, ", t1, t2);
+
+    // Print 3rd to nth terms
+    for (i = 3; i <= n; ++i) {
+        printf("%d, ", nextTerm);
+        t1 = t2;
+        t2 = nextTerm;
+        nextTerm = t1 + t2;
+    }
+
+    return 0;
+}
+
+
+

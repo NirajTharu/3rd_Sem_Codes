@@ -1,0 +1,16 @@
+
+#include<iostream>
+using namespace std;
+
+int insertion(int [],int ); //Adding the elements in the array
+int deletion(int); //Deleting the elements in the array
+int traversing();
+int sorting(); //Arranging the array items into ascending or descending order
+int merging(); //Merging is the process of adding two array into one
+int accessing();
+int display(); // For displaying the array elements after the operation.
+int spliting();
+int main()
+{
+    return 0;
+}

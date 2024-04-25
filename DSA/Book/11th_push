@@ -1,0 +1,25 @@
+#include<stdio.h>
+#define MAX 10
+int main()
+{
+    int top=4,i;
+    int item;
+    int stack[MAX]={44,55,22,29,19};
+    if(top==MAX-1)
+    {
+        printf("Stack is overflow");
+    }
+    else
+    {
+        printf("Enter the element you want to push:\n");
+        scanf("%d",&item);
+        top ++;
+        stack[top]=item;
+        printf("Stack after push:");
+        for(i=0;i<top;i++)
+        {
+            printf("%d\t",stack[i]);
+        }
+    }
+    return 0;
+}
